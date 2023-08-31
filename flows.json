@@ -7,48 +7,50 @@
         "info": ""
     },
     {
-        "id": "545bb668ab1df7cf",
-        "type": "inject",
+        "id": "2b221fa5327d179b",
+        "type": "http in",
         "z": "3af82246.3634ae",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 220,
-        "y": 140,
+        "name": "Ping",
+        "url": "/ping",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 150,
+        "y": 160,
         "wires": [
             [
-                "2ab0f43538c52a6f"
+                "345d72c05c3e6eb7"
             ]
         ]
     },
     {
-        "id": "2ab0f43538c52a6f",
-        "type": "debug",
+        "id": "345d72c05c3e6eb7",
+        "type": "template",
         "z": "3af82246.3634ae",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 400,
-        "y": 140,
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "OK",
+        "output": "str",
+        "x": 320,
+        "y": 160,
+        "wires": [
+            [
+                "5df21d55806e92d4"
+            ]
+        ]
+    },
+    {
+        "id": "5df21d55806e92d4",
+        "type": "http response",
+        "z": "3af82246.3634ae",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 480,
+        "y": 160,
         "wires": []
     }
 ]
